@@ -6,5 +6,6 @@ export interface GameModel {
   status: string; // NotStarted, InGame, Ended
   deck: CardModel[];
   players: PlayerModel[];
-  currentPlayer: string;
+  loadables: Function[];
+  extras: {}
 }

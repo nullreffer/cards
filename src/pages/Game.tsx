@@ -1,24 +1,17 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import './Game.css';
-import Board1 from '../components/Board1';
+import Board from '../components/Board';
 import { useParams } from 'react-router';
-import Board2 from '../components/Board2';
-import Board3 from '../components/Board3';
-import Board4 from '../components/Board4';
+import { GameModel } from '../models/GameModel';
 
 const Game: React.FC = () => {
   const { id } = useParams<{ id: string; }>();
   
-// load gameModel
-
-  var boardMap = {
-    "1": (<Board1></Board1>),
-    "2": (<Board2></Board2>),
-    "3": (<Board3></Board3>),
-    "4": (<Board4></Board4>)
-  }
-  var boardComponent = boardMap[id]
+  // load gameModel
+  const game : GameModel = null;
+  
+  var boardComponent = (<Board model={game} ></Board>)
 
   return (
     <IonPage>

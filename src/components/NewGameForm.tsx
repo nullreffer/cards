@@ -8,8 +8,36 @@ const NewGameForm: React.FC<NewGameProps> = () => {
   const [playerCount, setPlayerCount] = useState<number>(2)
   const [deckMetadata, setDeckMetadata] = useState<string>(`[
   {
-    "name": "spades",
-    "count": 12
+    "name": "basilisk",
+    "count": 9
+  },
+  {
+    "name": "centaurus",
+    "count": 9
+  },
+  {
+    "name": "chimera",
+    "count": 9
+  },
+  {
+    "name": "hippogriff",
+    "count": 9
+  },
+  {
+    "name": "manticore",
+    "count": 9
+  },
+  {
+    "name": "medusa",
+    "count": 9
+  },
+  {
+    "name": "pegasus",
+    "count": 9
+  },
+  {
+    "name": "phoenix",
+    "count": 9
   }
 ]`)
 
@@ -30,6 +58,10 @@ const [dealScript, setDealScript] = useState<string>(`function dealScript(game) 
   });
 
   return game.players[Math.floor(Math.random() * game.players.length)];
+}`);
+
+const [canPlayerAct, setCanPlayerAct] = useState<string>(`function canPlayerAct(game) {
+  
 }`);
 
   return (
@@ -59,6 +91,10 @@ const [dealScript, setDealScript] = useState<string>(`function dealScript(game) 
         <IonItem>
           <IonLabel position="stacked">Losing condition (return whether player passed in has lost)</IonLabel>
           <IonTextarea autoGrow={true} value={losingCondition} onIonChange={e => setLosingCondition(e.detail.value as string)}></IonTextarea>
+        </IonItem>
+        <IonItem>
+          <IonLabel position="stacked">Player turn action (return true for only one player at a time for turn based games)</IonLabel>
+          <IonTextarea autoGrow={true} value={canPlayerAct} onIonChange={e => setCanPlayerAct(e.detail.value as string)}></IonTextarea>
         </IonItem>
         <IonItem>
           <IonButton>Create</IonButton>

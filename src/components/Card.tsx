@@ -4,9 +4,10 @@ import { IonHeader, IonTitle, IonContent, IonItem, IonLabel, IonRange, IonInput,
 import { CardModel } from '../models/CardModel';
 
 const Card: React.FC<{ model: CardModel}> = (input: {model: CardModel}) => {
-  const [cardFaction] = useState<string>(input.model.cardFaction || "spades");
-  const [cardDenomination] = useState<string>(input.model.cardDenomination || "A");
-  const [cardImage] = useState<string>(input.model.cardImage || "../../assets/images/card_placeholder.png");
+  const card = input.model;
+  const [cardFaction] = useState<string>(card.cardFaction || "spades");
+  const [cardDenomination] = useState<string>(card.cardDenomination || "A");
+  const [cardImage] = useState<string>(card.cardImage || "../../assets/images/unknown.png");
 
   return (
     <div className="card" >
