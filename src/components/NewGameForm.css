@@ -1,0 +1,7 @@
+.container textarea {
+  min-height: 200px;
+}
+
+.container .textarea-wrapper {
+  min-height: 200px;
+}

@@ -1,0 +1,8 @@
+.fullgrid {
+  align-items: stretch;
+  display: flex;
+}
+
+.hcenter {
+  justify-content: center;
+}
